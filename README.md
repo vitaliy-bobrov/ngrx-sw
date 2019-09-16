@@ -1,4 +1,8 @@
-# NgrxSw
+# NgRx Star Wars
+
+Steps:
+1. Create app `ng new ngrx-sw --prefix ngsw --routing --style scss`
+2. Add material `ng add @angular/material`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
