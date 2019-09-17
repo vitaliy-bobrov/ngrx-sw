@@ -1,6 +1,7 @@
 <mat-form-field>
   <input
     matInput
+    type="search"
     placeholder="Search for hero"
     autocomplete="off"
     (input)="search.emit($event.target.value)">
