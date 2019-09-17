@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { HeroesResponse } from './heroes.interface';
+import { HeroesResponse, Hero } from './heroes.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,15 @@ export class HeroesService {
 
   constructor(private http: HttpClient) {}
 
-  all(): Observable<HeroesResponse> {
-    return this.http.get<HeroesResponse>(`${this.baseUrl}/people`);
+  all(): Observable<Hero[]> {
+    return this.http.get<HeroesResponse>(`${this.baseUrl}/people`)
+      .pipe(
+        map(res => res.results.map(info => ({
+          name: info.name,
+          gender: info.gender,
+          birth: info.birth_year,
+          hairColor: info.hair_color
+        })))
+      );
   }
 }

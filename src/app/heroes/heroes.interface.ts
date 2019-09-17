@@ -1,11 +1,18 @@
 export interface HeroesResponse {
   readonly count: number;
-  results: HeroInfo[];
+  results: HeroInfoApi[];
 }
 
-export interface HeroInfo {
+interface HeroInfoApi {
   name: string;
   gender: string;
   birth_year: string;
   hair_color: string;
+}
+
+export interface Hero {
+  name: string;
+  gender: string;
+  birth: string;
+  hairColor: string;
 }
