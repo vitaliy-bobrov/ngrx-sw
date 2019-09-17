@@ -9,6 +9,10 @@
         "@schematics/angular:component": {
           "style": "scss",
           "changeDetection": "OnPush"
+        },
+        "@ngrx/schematics:component": {
+          "styleext": "scss",
+          "changeDetection": "OnPush"
         }
       },
       "root": "",
@@ -129,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "ngrx-sw"
+  "defaultProject": "ngrx-sw",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
