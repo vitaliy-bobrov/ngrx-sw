@@ -24,3 +24,4 @@
     "changeDetection": "OnPush"
   }
   ```
+8. Generate root store
