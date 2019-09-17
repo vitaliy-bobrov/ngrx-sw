@@ -1,4 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+
+import { Hero } from '../heroes.interface';
 
 @Component({
   selector: 'ngsw-heroes-list-item',
@@ -6,11 +14,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./heroes-list-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeroesListItemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class HeroesListItemComponent {
+  @Input() hero: Hero;
+  @Output() like = new EventEmitter<Hero>();
 }

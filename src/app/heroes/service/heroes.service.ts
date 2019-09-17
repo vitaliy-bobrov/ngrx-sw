@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { HeroesResponse, Hero } from './heroes.interface';
+import { HeroesResponse, Hero } from '../heroes.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +16,22 @@ export class HeroesService {
   all(): Observable<Hero[]> {
     return this.http.get<HeroesResponse>(`${this.baseUrl}/people`)
       .pipe(
-        map(res => res.results.map(info => ({
-          name: info.name,
-          gender: info.gender,
-          birth: info.birth_year,
-          hairColor: info.hair_color
-        })))
+        map(this.mapResponse)
       );
+  }
+
+  find(token: string): Observable<Hero[]> {
+    return this.http.get<HeroesResponse>(`${this.baseUrl}/people/?search=${token}`)
+      .pipe(
+        map(this.mapResponse)
+      );
+  }
+
+  private mapResponse(res: HeroesResponse): Hero[] {
+    return res.results.map(info => ({
+      name: info.name,
+      gender: info.gender,
+      like: false
+    }));
   }
 }

@@ -1,1 +1,9 @@
-<p>heroes-list works!</p>
+<mat-card>
+  <mat-card-content>
+    <ngsw-heroes-list-item
+      *ngFor="let hero of heroes"
+      [hero]="hero"
+      (like)="like.emit(hero)">
+    </ngsw-heroes-list-item>
+  </mat-card-content>
+</mat-card>

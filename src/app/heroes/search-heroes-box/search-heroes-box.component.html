@@ -1,1 +1,7 @@
-<p>search-heroes-box works!</p>
+<mat-form-field>
+  <input
+    matInput
+    placeholder="Search for hero"
+    autocomplete="off"
+    (input)="search.emit($event.target.value)">
+</mat-form-field>

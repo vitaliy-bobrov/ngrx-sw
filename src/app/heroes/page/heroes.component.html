@@ -1,0 +1,14 @@
+<mat-card>
+    <h1>Star Wars Heroes</h1>
+    <ngsw-search-heroes-box (search)="onSearch($event)"></ngsw-search-heroes-box>
+</mat-card>
+
+<ng-container *ngIf="heroes$ | async as heroes; else loading">
+  <ngsw-heroes-list
+    [heroes]="heroes"
+    (like)="onHeroLike($event)"></ngsw-heroes-list>
+</ng-container>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+

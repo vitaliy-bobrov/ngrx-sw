@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter
+} from '@angular/core';
 
 @Component({
   selector: 'ngsw-search-heroes-box',
@@ -6,11 +11,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./search-heroes-box.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchHeroesBoxComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class SearchHeroesBoxComponent {
+  @Output() search = new EventEmitter<string>();
 }
