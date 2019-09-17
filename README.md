@@ -9,3 +9,4 @@
 1. Create app `ng new ngrx-sw --prefix ngsw --routing --style scss`
 2. Add material `ng add @angular/material`
 3. Set component schematic CD to "OnPush"
+4. Create heroes module and routed component `ng g m heroes --module app.module --route heroes`
