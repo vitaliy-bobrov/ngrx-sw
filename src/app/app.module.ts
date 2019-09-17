@@ -9,15 +9,15 @@ import {
   MatButtonModule
 } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { reducers, metaReducers } from './shared/store';
-import { environment } from '../environments/environment';
-import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './effects/app.effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
