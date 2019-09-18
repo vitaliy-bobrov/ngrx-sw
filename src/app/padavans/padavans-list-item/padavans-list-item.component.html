@@ -1,0 +1,10 @@
+<mat-list-item>
+  <h3 mat-line>{{ padavan.name }}</h3>
+  <p>ID: {{ padavan.id }}</p>
+  <button
+    mat-icon-button
+    (click)="edit.emit(padavan); $event.stopImmediatePropagation()">
+    <mat-icon>edit</mat-icon>
+  </button>
+</mat-list-item>
+

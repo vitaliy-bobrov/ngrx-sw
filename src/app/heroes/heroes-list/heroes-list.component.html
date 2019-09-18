@@ -3,7 +3,7 @@
     <ngsw-heroes-list-item
       *ngFor="let hero of heroes"
       [hero]="hero"
-      (like)="like.emit(hero)">
+      (like)="like.emit($event)">
     </ngsw-heroes-list-item>
   </mat-card-content>
 </mat-card>

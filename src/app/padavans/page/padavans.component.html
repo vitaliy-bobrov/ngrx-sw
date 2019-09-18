@@ -1,0 +1,15 @@
+<mat-card>
+    <h1>Star Wars Padavans</h1>
+</mat-card>
+<ngsw-padavan-form
+  [padavan]="selectedPadavan$ | async"
+  (save)="onPadavanSave($event)"></ngsw-padavan-form>
+<ng-container *ngIf="padavans$ | async as padavans; else loading">
+  <ngsw-padavans-list
+    [padavans]="padavans"
+    (edit)="onPadavanEdit($event)"></ngsw-padavans-list>
+</ng-container>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+
