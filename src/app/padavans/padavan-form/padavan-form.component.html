@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>
+          <span *ngIf="originalPadavan?.id; else prompt">
+            Editing {{ originalPadavan.name }}
+          </span>
+          <ng-template #prompt>Create Padavan</ng-template>
+        </h2>
+      </mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="padavanForm" #f="ngForm" (submit)="onSubmit(f.value)">
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            placeholder="Name"
+            formControlName="name"
+            type="text"
+            autocomplete="off"/>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" mat-button>Save</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>

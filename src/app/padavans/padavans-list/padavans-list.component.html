@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-content>
+    <ngsw-padavans-list-item
+      *ngFor="let padavan of padavans"
+      [padavan]="padavan"
+      (edit)="edit.emit($event)">
+    </ngsw-padavans-list-item>
+  </mat-card-content>
+</mat-card>
