@@ -9,7 +9,7 @@ import { Hero } from '../heroes.interface';
 import { HeroesService } from '../service/heroes.service';
 import { Store } from '@ngrx/store';
 import * as fromHeroesReducer from '../reducers/index';
-import { LoadHeroes } from '../actions/heroes.actions';
+import { loadHeroes } from '../actions/heroes.actions';
 
 @Component({
   selector: 'ngsw-heroes',
@@ -26,7 +26,7 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new LoadHeroes());
+    this.store.dispatch(loadHeroes());
   }
 
   onHeroLike(hero: Hero) {
