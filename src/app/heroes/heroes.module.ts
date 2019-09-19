@@ -9,7 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import * as fromHeroes from './reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { HeroesEffects } from './heroes.effects';
+import { HeroesEffects } from './effects/heroes.effects';
 
 @NgModule({
   declarations: [
