@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { nanoid } from 'nanoid';
+import nanoid from 'nanoid';
 import { Observable } from 'rxjs';
 
 import { Padavan, PadavanRequiredProps } from '../padavans.interface';
