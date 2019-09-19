@@ -14,7 +14,7 @@ export class LoadHeroes implements Action {
 export class LoadHeroesSuccess implements Action {
   readonly type = HeroesActionTypes.LoadHeroesSuccess;
 
-  constructor(public data: Hero[]) {}
+  constructor(public payload: Hero[]) {}
 }
 
 export class LoadHeroesFail implements Action {

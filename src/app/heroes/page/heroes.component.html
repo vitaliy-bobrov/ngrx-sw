@@ -3,12 +3,11 @@
     <ngsw-search-heroes-box (search)="onSearch($event)"></ngsw-search-heroes-box>
 </mat-card>
 
-<ng-container *ngIf="heroes$ | async as heroes; else loading">
+<ng-container *ngIf="heroes$ | async as heroes">
   <ngsw-heroes-list
     [heroes]="heroes"
     (like)="onHeroLike($event)"></ngsw-heroes-list>
 </ng-container>
-<ng-template #loading>
-  <p>Loading...</p>
-</ng-template>
+
+<p *ngIf="isLoading$ | async">Loading...</p>
 

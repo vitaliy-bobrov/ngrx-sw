@@ -1,11 +1,15 @@
 import {
   Component,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  OnInit
 } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Hero } from '../heroes.interface';
 import { HeroesService } from '../service/heroes.service';
+import { Store } from '@ngrx/store';
+import * as fromHeroesReducer from '../reducers/index';
+import { LoadHeroes } from '../actions/heroes.actions';
 
 @Component({
   selector: 'ngsw-heroes',
@@ -13,11 +17,16 @@ import { HeroesService } from '../service/heroes.service';
   styleUrls: ['./heroes.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeroesComponent {
+export class HeroesComponent implements OnInit {
   heroes$: Observable<Hero[]>;
+  isLoading$ = this.store.select(fromHeroesReducer.isLoading);
 
-  constructor(private service: HeroesService) {
-    this.heroes$ = service.all();
+  constructor(private store: Store<fromHeroesReducer.State>) {
+    this.heroes$ = store.select(fromHeroesReducer.allHeroes);
+  }
+
+  ngOnInit() {
+    this.store.dispatch(new LoadHeroes());
   }
 
   onHeroLike(hero: Hero) {
@@ -26,6 +35,5 @@ export class HeroesComponent {
 
   onSearch(token: string) {
     this.heroes$ = null;
-    this.heroes$ = this.service.find(token);
   }
 }

@@ -18,3 +18,6 @@ export const reducers: ActionReducerMap<State> = {
 };
 
 const heroesStateSelector = createFeatureSelector(heroesFeatureKey);
+const heroesState = createSelector(heroesStateSelector, fromHeroes.heroesSelector);
+export const allHeroes = createSelector(heroesState, fromHeroes.allHeroes);
+export const isLoading = createSelector(heroesState, fromHeroes.isLoading);
