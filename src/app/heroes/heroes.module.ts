@@ -8,6 +8,8 @@ import { SearchHeroesBoxComponent } from './search-heroes-box/search-heroes-box.
 import { SharedModule } from '../shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import * as fromHeroes from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { HeroesEffects } from './heroes.effects';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import * as fromHeroes from './reducers';
   imports: [
     HeroesRoutingModule,
     SharedModule,
-    StoreModule.forFeature(fromHeroes.heroesFeatureKey, fromHeroes.reducers)
+    StoreModule.forFeature(fromHeroes.heroesFeatureKey, fromHeroes.reducers),
+    EffectsModule.forFeature([HeroesEffects])
   ]
 })
 export class HeroesModule {}
