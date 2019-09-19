@@ -30,5 +30,5 @@
 10. Add router store `ng add @ngrx/router-store`
 11. `ng g store heroes/Heroes --module heroes.module.ts`
 12. `ng g action heroes/Heroes --group`
-13. `ng g reducer Heroes --reducers heroes/reducers/index.ts`
+13. `ng g reducer heroes/reducers/Heroes --reducers index.ts`
 14. `ng g effect heroes/Heroes --module heroes/heroes.module.ts`

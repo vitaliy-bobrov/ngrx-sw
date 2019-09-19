@@ -5,7 +5,7 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
-import * as fromHeroes from '../../heroes.reducer';
+import * as fromHeroes from './heroes.reducer';
 
 export const heroesFeatureKey = 'heroes';
 
