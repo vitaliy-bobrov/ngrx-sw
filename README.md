@@ -24,6 +24,10 @@
     "changeDetection": "OnPush"
   }
   ```
+
 8. Generate root store `ng g store State --root --module app.module.ts --statePath shared/store`
 9. Generate root effects `ng g effect app --root --module app.module.ts --group`
 10. Add router store `ng add @ngrx/router-store`
+11. `ng g store heroes/Heroes --module heroes.module.ts`
+12. `ng g action heroes/Heroes --group`
+13.
